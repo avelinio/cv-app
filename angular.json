@@ -27,8 +27,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/semantic-ui-css/semantic.min.js"
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/semantic-ui-css/semantic.js"
             ]
           },
           "configurations": {
