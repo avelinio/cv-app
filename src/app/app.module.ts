@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { CvFormComponent } from './cv-form/cv-form.component';
 import { HeaderComponent } from './header/header.component';
 import { CvListComponent } from './cv-list/cv-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CvListComponent } from './cv-list/cv-list.component';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
