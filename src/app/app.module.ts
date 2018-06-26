@@ -7,10 +7,16 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 
 import { environment } from '../environments/environment';
+import { CvFormComponent } from './cv-form/cv-form.component';
+import { HeaderComponent } from './header/header.component';
+import { CvListComponent } from './cv-list/cv-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CvFormComponent,
+    HeaderComponent,
+    CvListComponent,
   ],
   imports: [
     BrowserModule,
