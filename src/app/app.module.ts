@@ -11,6 +11,7 @@ import { CvFormComponent } from './cv-form/cv-form.component';
 import { HeaderComponent } from './header/header.component';
 import { CvListComponent } from './cv-list/cv-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppBootstrapModule } from './app-bootstrap.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AppBootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]

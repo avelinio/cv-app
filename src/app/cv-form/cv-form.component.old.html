@@ -1,0 +1,223 @@
+<div class="container">
+  <form class="ui form">
+    <h3 class="ui dividing header">Personal Information</h3>
+    <!-- name -->
+    <div class="three fields">
+      <div class="field">
+        <label>First name</label>
+        <input type="text" placeholder="First Name">
+      </div>
+      <div class="field">
+        <label>Middle name</label>
+        <input type="text" placeholder="Middle Name">
+      </div>
+      <div class="field">
+        <label>Last name</label>
+        <input type="text" placeholder="Last Name">
+      </div>
+    </div>
+    <!--  -->
+    <!-- Contact information -->
+    <div class="fields">
+      <div class="ten wide field">
+        <label>E-mail</label>
+        <input type="email" placeholder="joe@schmoe.com">
+      </div>
+     
+      <div class="six wide field">
+        <label>Birth date</label>
+        <div class="three fields">
+          <div class="field">
+             <input type="text" name="birthDate" placeholder="Date">
+          </div>
+          <div class="field">
+             <select class="ui fluid search dropdown" name="birthMonth">
+                <option value="">Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+             </select>
+          </div>
+          <div class="field">
+          <input type="text" name="birthYear" placeholder="Year">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Address -->
+    <div class="field">
+      <label>Address</label>
+      <div class="fields">
+        <div class="four wide field">
+          <input type="text" name="country" placeholder="Country">
+        </div>
+        <div class="four wide field">
+          <input type="text" name="city" placeholder="City">
+        </div>
+        <div class="eight wide field">
+          <input type="text" name="address" placeholder="Street Address">
+        </div>
+      </div>
+    </div>
+    <!-- phone Number -->
+    <div class="field">
+    <label>Phone Number</label>
+      <div class="fields">
+      <div class="two wide field">
+        <input type="text" placeholder="(xxx)">
+      </div>
+      <div class="two wide field">
+        <input type="text" placeholder="xxx">
+      </div>
+      <div class="three wide field">
+        <input type="text" placeholder="xxxx">
+      </div>
+    </div>
+    </div>
+    <!--  Work Experience -->
+    <h3 class="ui dividing header">Work Experience</h3>
+    <div class="fields">
+      <div class="seven wide field">
+        <label>Organization</label>
+        <input type="text" name="organization"  placeholder="Organization">
+      </div>
+      
+      <div class="nine wide field">
+        <div class="four fields">
+          <div class="field">
+            <label>From</label>
+            <select class="ui fluid search dropdown" name="fromMonth">
+              <option value="">Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Year</label>
+            <input type="text" name="from" maxlength="4" placeholder="Year">
+          </div>
+          <div class="field">
+            <label>To</label>
+            <select class="ui fluid search dropdown" name="toMonth">
+              <option value="">Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Year</label>
+            <input type="text" name="toYear" maxlength="4" placeholder="Year">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--job description -->
+    <div class="five wide field">
+      <label>Job title</label>
+      <input type="text" name="jobTitle" maxlength="4" placeholder="Job title">
+    </div>
+    <div class="field">
+      <label>Job description</label>
+      <textarea></textarea>
+    </div>
+    <!--  Education-->
+    <h3 class="ui dividing header">Education</h3>
+    <div class="fields">
+      <div class="eight wide field">
+        <label>School</label>
+        <input type="text" name="school" placeholder="School">
+      </div>
+      <div class="four wide field">
+        <label>Degree</label>
+        <input type="text" name="degree" placeholder="Degree">
+      </div>
+      <div class="four wide field">
+        <label>Education period</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="schoolStart" placeholder="Year">
+          </div>
+          <i class="resize horizontal icon"></i>
+          <div class="field">
+            <input type="text" name="schoolEnd" placeholder="Year">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <textarea></textarea>
+    </div>
+    <!-- languages -->
+    <div class="inline fields">
+      <label for="language">Languages:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="language" checked="" tabindex="0" class="hidden">
+          <label>1</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="language" tabindex="0" class="hidden">
+          <label>2</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="language" tabindex="0" class="hidden">
+          <label>3</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="language" tabindex="0" class="hidden">
+          <label>4</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="language" tabindex="0" class="hidden">
+          <label>5</label>
+        </div>
+      </div>
+    </div>
+    <!-- Skills -->
+    <h3 class="ui dividing header">Skills</h3>
+    <div class="inline field">
+      <div class="six wide field">
+        <label>Add Your Skills</label>
+        <input type="text" name="skill" placeholder="Skill">
+      </div>
+    </div>
+  </form>
+</div>

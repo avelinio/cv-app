@@ -1,37 +1,54 @@
+
 <div class="container">
-  <form class="ui form">
-    <h3 class="ui dividing header">Personal Information</h3>
-    <!-- name -->
-    <div class="three fields">
-      <div class="field">
-        <label>First name</label>
-        <input type="text" placeholder="First Name">
-      </div>
-      <div class="field">
-        <label>Middle name</label>
-        <input type="text" placeholder="Middle Name">
-      </div>
-      <div class="field">
-        <label>Last name</label>
-        <input type="text" placeholder="Last Name">
+  <form>
+    <!-- personal information -->
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Personal Information</h4>
+        <hr>
       </div>
     </div>
-    <!--  -->
-    <!-- Contact information -->
-    <div class="fields">
-      <div class="ten wide field">
-        <label>E-mail</label>
-        <input type="email" placeholder="joe@schmoe.com">
+    <!-- Name -->
+    <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control" placeholder="Name">
       </div>
-     
-      <div class="six wide field">
-        <label>Birth date</label>
-        <div class="three fields">
-          <div class="field">
-             <input type="text" name="birthDate" placeholder="Date">
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="midname">Mnamedle Name</label>
+        <input type="text" name="midname" class="form-control" placeholder="Middle name">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" class="form-control" placeholder="Last name">
+      </div>
+    </div>
+    </div>
+    <!-- email -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control" placeholder="Email">
+        </div>
+      </div>
+      <!-- birthdate -->
+      <div class="col-md-6">
+        <label>Birth Date</label>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <input type="number" name="birthdate" class="form-control" min="1" max="31" placeholder="Date">
+            </div>
           </div>
-          <div class="field">
-             <select class="ui fluid search dropdown" name="birthMonth">
+          <div class="col-md-4">
+            <div class="form-group">
+              <select class="form-control" name="birthmonth">
                 <option value="">Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -45,179 +62,251 @@
                 <option value="10">October</option>
                 <option value="11">November</option>
                 <option value="12">December</option>
-             </select>
+              </select>
+            </div>
           </div>
-          <div class="field">
-          <input type="text" name="birthYear" placeholder="Year">
+          <div class="col-md-4">
+            <div class="form-group">
+              <input type="number" class="form-control" name="birthyear"  placeholder="Year" >
+            </div>
+          </div>
+      </div>
+      </div> 
+    </div>
+      <!-- Contact information -->
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" class="form-control" placeholder="Country">
           </div>
         </div>
-      </div>
-    </div>
-    <!-- Address -->
-    <div class="field">
-      <label>Address</label>
-      <div class="fields">
-        <div class="four wide field">
-          <input type="text" name="country" placeholder="Country">
-        </div>
-        <div class="four wide field">
-          <input type="text" name="city" placeholder="City">
-        </div>
-        <div class="eight wide field">
-          <input type="text" name="address" placeholder="Street Address">
-        </div>
-      </div>
-    </div>
-    <!-- phone Number -->
-    <div class="field">
-    <label>Phone Number</label>
-      <div class="fields">
-      <div class="two wide field">
-        <input type="text" placeholder="(xxx)">
-      </div>
-      <div class="two wide field">
-        <input type="text" placeholder="xxx">
-      </div>
-      <div class="three wide field">
-        <input type="text" placeholder="xxxx">
-      </div>
-    </div>
-    </div>
-    <!--  Work Experience -->
-    <h3 class="ui dividing header">Work Experience</h3>
-    <div class="fields">
-      <div class="seven wide field">
-        <label>Organization</label>
-        <input type="text" name="organization"  placeholder="Organization">
-      </div>
-      
-      <div class="nine wide field">
-        <div class="four fields">
-          <div class="field">
-            <label>From</label>
-            <select class="ui fluid search dropdown" name="fromMonth">
-              <option value="">Month</option>
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
-            </select>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" name="city" class="form-control" placeholder="City">
           </div>
-          <div class="field">
-            <label>Year</label>
-            <input type="text" name="from" maxlength="4" placeholder="Year">
-          </div>
-          <div class="field">
-            <label>To</label>
-            <select class="ui fluid search dropdown" name="toMonth">
-              <option value="">Month</option>
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Year</label>
-            <input type="text" name="toYear" maxlength="4" placeholder="Year">
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" name="address" class="form-control" placeholder="Address">
           </div>
         </div>
       </div>
-    </div>
-    <!--job description -->
-    <div class="five wide field">
-      <label>Job title</label>
-      <input type="text" name="jobTitle" maxlength="4" placeholder="Job title">
-    </div>
-    <div class="field">
-      <label>Job description</label>
-      <textarea></textarea>
-    </div>
-    <!--  Education-->
-    <h3 class="ui dividing header">Education</h3>
-    <div class="fields">
-      <div class="eight wide field">
-        <label>School</label>
-        <input type="text" name="school" placeholder="School">
-      </div>
-      <div class="four wide field">
-        <label>Degree</label>
-        <input type="text" name="degree" placeholder="Degree">
-      </div>
-      <div class="four wide field">
-        <label>Education period</label>
-        <div class="two fields">
-          <div class="field">
-            <input type="text" name="schoolStart" placeholder="Year">
-          </div>
-          <i class="resize horizontal icon"></i>
-          <div class="field">
-            <input type="text" name="schoolEnd" placeholder="Year">
+      <!-- Phone Number -->
+      <div class="row">
+        <div class="col-md-6">
+          <label>Phone Number</label>
+          <div class="row">
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="(xxx)">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="xxx">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="xxxxxx">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="field">
-      <label>Description</label>
-      <textarea></textarea>
-    </div>
-    <!-- languages -->
-    <div class="inline fields">
-      <label for="language">Languages:</label>
-      <div class="field">
-        <div class="ui radio checkbox">
-          <input type="radio" name="language" checked="" tabindex="0" class="hidden">
-          <label>1</label>
+      <!-- Work experience -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <h4>Work experience</h4>
+          <hr>
         </div>
       </div>
-      <div class="field">
-        <div class="ui radio checkbox">
-          <input type="radio" name="language" tabindex="0" class="hidden">
-          <label>2</label>
+      <!-- Organization name working period -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="organization">Organization Name</label>
+            <input type="text" name="organization" class="form-control" placeholder="Organization">
+          </div>
+        </div> 
+        <div class="col-md-3">
+          <label for="fromyear">From</label>
+          <div class="row">
+            <div class="col-md-6">
+                <select class="form-control" name="frommonth">
+                  <option value="">Month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input type="number" name="fromyear" class="form-control" placeholder="Year">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="fromyear">To</label>
+          <div class="row">
+            <div class="col-md-6">
+                <select class="form-control" name="tomonth">
+                  <option value="">Month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input type="number" name="toyear" class="form-control" placeholder="Year">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="field">
-        <div class="ui radio checkbox">
-          <input type="radio" name="language" tabindex="0" class="hidden">
-          <label>3</label>
+      <!-- Job title and discription -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="jobtitle">Job Title</label>
+            <input type="text" name="jobtitle" class="form-control" placeholder="Job title">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="department">Organization Department</label>
+            <input type="text" name="department" class="form-control" placeholder="Department">
+          </div>
         </div>
       </div>
-      <div class="field">
-        <div class="ui radio checkbox">
-          <input type="radio" name="language" tabindex="0" class="hidden">
-          <label>4</label>
+
+      <div class="row">
+        <div class="col-md-10">
+          <div class="form-group">
+            <label for="jobdescription">Job Description</label>
+            <textarea type="text" name="jobdescription" class="form-control" rows="6"></textarea>
+          </div>
         </div>
       </div>
-      <div class="field">
-        <div class="ui radio checkbox">
-          <input type="radio" name="language" tabindex="0" class="hidden">
-          <label>5</label>
+      <!-- Education -->
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <h4>Education</h4>
+            <hr>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- Skills -->
-    <h3 class="ui dividing header">Skills</h3>
-    <div class="inline field">
-      <div class="six wide field">
-        <label>Add Your Skills</label>
-        <input type="text" name="skill" placeholder="Skill">
-      </div>
-    </div>
-  </form>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="school">School</label>
+              <input type="text" name="school" class="form-control" placeholder="School">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="startyear">Start</label>
+              <input type="number" name="startyear" class="form-control" placeholder="Year">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="endyear">End</label>
+              <input type="number" name="endyear" class="form-control" placeholder="Year">
+            </div>
+          </div>  
+        </div>
+        <!-- Study area and discription -->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="studyarea">Study Area</label>
+              <input type="text" name="studyarea" class="form-control" placeholder="Study area">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="degree">Degree</label>
+              <input type="text" name="degree" class="form-control" placeholder="Degree">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-10">
+            <div class="form-group">
+              <label for="studydesc">Study Area Description</label>
+              <textarea type="text" name="studydesc" class="form-control" rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- languages -->
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <h4>Languages</h4>
+            <hr>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <label>Languages</label>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="language" id="lang1" value="1">
+                  <label class="form-check-label" for="lang1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="language" id="lang2" value="2">
+                  <label class="form-check-label" for="lang2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="language" id="lang3" value="3">
+                  <label class="form-check-label" for="lang3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="language" id="lang4" value="4">
+                  <label class="form-check-label" for="lang4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="language" id="lang5" value="5">
+                  <label class="form-check-label" for="lang5">5</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- skills -->
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <h4>Skills</h4>
+            <hr>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+            <label for="skills">Add Your Skills</label>
+            <input type="text" name="skill" id="skills" class="form-control" placeholder="Skill">
+          </div>
+          </div>
+        </div>
+
+    </form>
 </div>

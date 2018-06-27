@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var jQuery: any;
+
 
 @Component({
   selector: 'app-cv-form',
@@ -12,8 +12,6 @@ export class CvFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    jQuery('.ui.radio.checkbox')
-      .checkbox();
   }
 
 }
