@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { CvListComponent } from './cv-list/cv-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppBootstrapModule } from './app-bootstrap.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AppBootstrapModule } from './app-bootstrap.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
-    AppBootstrapModule
+    AppBootstrapModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 
 <div class="container">
-  <form>
+  <form [formGroup]="cvForm" (ngSubmit)="onSubmit()">
     <!-- personal information -->
     <div class="row">
       <div class="col-md-12">
@@ -9,23 +9,26 @@
       </div>
     </div>
     <!-- Name -->
-    <div class="row">
+    <div class="row" formGroupName="fullname">
     <div class="col-md-4">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" class="form-control" placeholder="Name">
+        <input type="text" name="name" class="form-control" placeholder="Name"
+        formControlName="name">
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-group">
-        <label for="midname">Mnamedle Name</label>
-        <input type="text" name="midname" class="form-control" placeholder="Middle name">
+        <label for="midname">Middle Name</label>
+        <input type="text" name="midname" class="form-control" placeholder="Middle name"
+         formControlName="midname">
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" class="form-control" placeholder="Last name">
+        <input type="text" name="lastname" class="form-control" placeholder="Last name"
+         formControlName="lastname">
       </div>
     </div>
     </div>
@@ -34,7 +37,8 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" name="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" class="form-control" placeholder="Email"
+           formControlName="mail">
         </div>
       </div>
       <!-- birthdate -->
@@ -74,23 +78,26 @@
       </div> 
     </div>
       <!-- Contact information -->
-      <div class="row">
+      <div class="row" formGroupName="location">
         <div class="col-md-3">
           <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" name="country" class="form-control" placeholder="Country">
+            <input type="text" name="country" class="form-control" placeholder="Country"
+            formControlName="country">
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
             <label for="city">City</label>
-            <input type="text" name="city" class="form-control" placeholder="City">
+            <input type="text" name="city" class="form-control" placeholder="City"
+             formControlName="city">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" name="address" class="form-control" placeholder="Address">
+            <input type="text" name="address" class="form-control" placeholder="Address"
+             formControlName="address">
           </div>
         </div>
       </div>
@@ -113,11 +120,14 @@
       </div>
       <!-- Work experience -->
       <div class="row mt-4">
-        <div class="col-md-12">
+        <div class="col-md-10">
           <h4>Work experience</h4>
-          <hr>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-success" (click)="addMoreWorkplace()">Add More</button>
         </div>
       </div>
+      <hr>
       <!-- Organization name working period -->
       <div class="row">
         <div class="col-md-6">
@@ -305,6 +315,12 @@
             <label for="skills">Add Your Skills</label>
             <input type="text" name="skill" id="skills" class="form-control" placeholder="Skill">
           </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary float-md-right">Submit</button>
           </div>
         </div>
 
