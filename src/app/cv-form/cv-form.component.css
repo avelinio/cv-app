@@ -1,0 +1,9 @@
+.container {
+    max-width: 1024px;
+    padding: 30px;
+    margin: 40px auto;
+}
+i.horizontal.icon {
+    margin: auto;
+}
+
