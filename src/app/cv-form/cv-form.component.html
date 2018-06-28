@@ -9,7 +9,8 @@
       </div>
     </div>
     <!-- Name -->
-    <div class="row" formGroupName="fullname">
+    <div formGroupName="userData">
+    <div class="row">
     <div class="col-md-4">
       <div class="form-group">
         <label for="name">Name</label>
@@ -19,16 +20,16 @@
     </div>
     <div class="col-md-4">
       <div class="form-group">
-        <label for="midname">Middle Name</label>
-        <input type="text" name="midname" class="form-control" placeholder="Middle name"
-         formControlName="midname">
+        <label for="midName">Middle Name</label>
+        <input type="text" name="midName" class="form-control" placeholder="Middle name"
+         formControlName="midName">
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-group">
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" class="form-control" placeholder="Last name"
-         formControlName="lastname">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" class="form-control" placeholder="Last name"
+         formControlName="lastName">
       </div>
     </div>
     </div>
@@ -44,15 +45,16 @@
       <!-- birthdate -->
       <div class="col-md-6">
         <label>Birth Date</label>
-        <div class="row">
+        <div class="row" formGroupName="birthday">
           <div class="col-md-4">
             <div class="form-group">
-              <input type="number" name="birthdate" class="form-control" min="1" max="31" placeholder="Date">
+              <input type="number" name="birthdate" class="form-control" min="1" max="31" placeholder="Date"
+              formControlName="date">
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <select class="form-control" name="birthmonth">
+              <select class="form-control" name="birthmonth" formControlName="month">
                 <option value="">Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -71,7 +73,8 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <input type="number" class="form-control" name="birthyear"  placeholder="Year" >
+              <input type="number" class="form-control" name="birthyear"  placeholder="Year" 
+               formControlName="year">
             </div>
           </div>
       </div>
@@ -102,21 +105,15 @@
         </div>
       </div>
       <!-- Phone Number -->
-      <div class="row">
+      <div class="row" >
         <div class="col-md-6">
-          <label>Phone Number</label>
-          <div class="row">
-            <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="(xxx)">
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="xxx">
-            </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="xxxxxx">
-            </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" class="form-control" placeholder="(xxx) xxx-xxxxxxx"
+            formControlName="phoneNumber">
           </div>
         </div>
+      </div>
       </div>
       <!-- Work experience -->
       <div class="row mt-4">
@@ -124,23 +121,28 @@
           <h4>Work experience</h4>
         </div>
         <div class="col-md-2">
-          <button type="button" class="btn btn-success" (click)="addMoreWorkplace()">Add More</button>
+          <button type="button" class="btn btn-success" (click)="addWorkplace()">Add More</button>
         </div>
       </div>
       <hr>
       <!-- Organization name working period -->
+      <div formArrayName="workForm">
+      <div *ngFor="let item of cvForm.get('workForm').controls; let i = index;">
+      <div formGroupName="{{i}}">
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
             <label for="organization">Organization Name</label>
-            <input type="text" name="organization" class="form-control" placeholder="Organization">
+            <input type="text" name="organization" class="form-control" placeholder="Organization"
+            formControlName="orgName">
           </div>
         </div> 
+        
         <div class="col-md-3">
-          <label for="fromyear">From</label>
+          <label>From</label>
           <div class="row">
             <div class="col-md-6">
-                <select class="form-control" name="frommonth">
+                <select class="form-control" name="fromMonth" formControlName="fromMonth">
                   <option value="">Month</option>
                   <option value="1">January</option>
                   <option value="2">February</option>
@@ -157,15 +159,17 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <input type="number" name="fromyear" class="form-control" placeholder="Year">
+                <input type="number" name="fromYear" class="form-control" placeholder="Year"
+                 formControlName="fromYear">
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <label for="fromyear">To</label>
+          <label>To</label>
           <div class="row">
             <div class="col-md-6">
-                <select class="form-control" name="tomonth">
+                <select class="form-control" name="toMonth"
+                 formControlName="toMonth">
                   <option value="">Month</option>
                   <option value="1">January</option>
                   <option value="2">February</option>
@@ -182,7 +186,8 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <input type="number" name="toyear" class="form-control" placeholder="Year">
+                <input type="number" name="toYear" class="form-control" placeholder="Year"
+                 formControlName="toYear">
             </div>
           </div>
         </div>
@@ -191,14 +196,16 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="jobtitle">Job Title</label>
-            <input type="text" name="jobtitle" class="form-control" placeholder="Job title">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" name="jobTitle" class="form-control" placeholder="Job title"
+             formControlName="jobTitle">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="department">Organization Department</label>
-            <input type="text" name="department" class="form-control" placeholder="Department">
+            <input type="text" name="department" class="form-control" placeholder="Department"
+             formControlName="department">
           </div>
         </div>
       </div>
@@ -206,10 +213,14 @@
       <div class="row">
         <div class="col-md-10">
           <div class="form-group">
-            <label for="jobdescription">Job Description</label>
-            <textarea type="text" name="jobdescription" class="form-control" rows="6"></textarea>
+            <label for="jobDescription">Job Description</label>
+            <textarea type="text" name="jobDescription" class="form-control" rows="6"
+             formControlName="jobDescription"></textarea>
           </div>
         </div>
+      </div>
+       </div>
+       </div>
       </div>
       <!-- Education -->
         <div class="row mt-4">
