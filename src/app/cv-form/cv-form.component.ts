@@ -12,11 +12,34 @@ export class CvFormComponent implements OnInit {
   cvForm: FormGroup;
   workFormArray: any[] = [];
 
-  constructor(private fb:FormBuilder) {
-   
-  }
+  constructor(private fb:FormBuilder) { }
  
 
+  
+  createWorkFormItem(): FormGroup {
+    return this.fb.group({
+      'orgName': [null, Validators.required],
+      'fromYear': [null, Validators.required],
+      'fromMonth': [null, Validators.required],
+      'toMonth': [null, Validators.required],
+      'toYear': [null, Validators.required],
+      'jobTitle': [null, Validators.required],
+      'department': [null, Validators.required],
+      'jobDescription': [null, Validators.required]
+    })
+  } 
+
+  createSchoolFormItem(): FormGroup {
+    return this.fb.group({
+      'school': [null, Validators.required],
+      'schoolFromYear': [null, Validators.required],
+      'schoolToYear': [null, Validators.required],
+      'studyArea': [null, Validators.required],
+      'degree': [null, Validators.required],
+      'studyDesc': [null, Validators.required]
+    })
+
+  }
 
   createForm(){
     this.cvForm = this.fb.group({
@@ -39,29 +62,29 @@ export class CvFormComponent implements OnInit {
         'phoneNumber': [null, Validators.required],
       }),
       //  user work experience
-      'workForm': this.fb.array([this.createFormItem()]),
-
-      
+      'workForm': this.fb.array([this.createWorkFormItem()]),
+      'schoolForm': this.fb.array([this.createSchoolFormItem()]),
+      'language': [null, Validators.required],
+      'skills':new FormArray ([
+        new FormControl('', Validators.required)
+      ])  
     })
   } 
 
-  
-  createFormItem(): FormGroup {
-    return this.fb.group({
-      'orgName': [null, Validators.required],
-      'fromYear': [null, Validators.required],
-      'fromMonth': [null, Validators.required],
-      'toMonth': [null, Validators.required],
-      'toYear': [null, Validators.required],
-      'jobTitle': [null, Validators.required],
-      'department': [null, Validators.required],
-      'jobDescription': [null, Validators.required]
-    })
-  } 
   
   addWorkplace(): void {
     const workForm = this.cvForm.get('workForm') as FormArray;
-    workForm.push(this.createFormItem());
+    workForm.push(this.createWorkFormItem());
+  }
+  
+  addSchool(): void {
+    const schoolForm = this.cvForm.get('schoolForm') as FormArray;
+    schoolForm.push(this.createSchoolFormItem());
+  }
+
+  addSkill(): void {
+    const skill = this.cvForm.get('skills') as FormArray;
+    skill.push(new FormControl('', Validators.required));
   }
 
   ngOnInit() {

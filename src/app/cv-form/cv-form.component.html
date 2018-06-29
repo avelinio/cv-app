@@ -115,6 +115,7 @@
         </div>
       </div>
       </div>
+      <div *ngIf="cvForm.get('userData').invalid && cvForm.get('userData').touched" class="alert alert-danger" role="alert">Please fill all fields and correct invalid data</div>
       <!-- Work experience -->
       <div class="row mt-4">
         <div class="col-md-10">
@@ -127,7 +128,7 @@
       <hr>
       <!-- Organization name working period -->
       <div formArrayName="workForm">
-      <div *ngFor="let item of cvForm.get('workForm').controls; let i = index;">
+      <div *ngFor="let workplace of cvForm.get('workForm').controls; let i = index;">
       <div formGroupName="{{i}}">
       <div class="row">
         <div class="col-md-6">
@@ -216,37 +217,51 @@
             <label for="jobDescription">Job Description</label>
             <textarea type="text" name="jobDescription" class="form-control" rows="6"
              formControlName="jobDescription"></textarea>
+          <hr>
           </div>
         </div>
       </div>
-       </div>
-       </div>
       </div>
+      </div>
+      </div>
+            <div *ngIf="cvForm.get('workForm').invalid && cvForm.get('workForm').touched" class="alert alert-danger"
+              role="alert">Please fill all fields and correct invalid data</div>
+
       <!-- Education -->
         <div class="row mt-4">
-          <div class="col-md-12">
+          <div class="col-md-10">
             <h4>Education</h4>
-            <hr>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-success" (click)="addSchool()">Add More</button>
           </div>
         </div>
+        <hr>
+
+        <div formArrayName="schoolForm">
+        <div *ngFor="let school of cvForm.get('schoolForm').controls; let i = index;">
+        <div formGroupName="{{i}}">
 
         <div class="row">
           <div class="col-md-8">
             <div class="form-group">
               <label for="school">School</label>
-              <input type="text" name="school" class="form-control" placeholder="School">
+              <input type="text" name="school" class="form-control" placeholder="School"
+              formControlName="school">
             </div>
           </div>
           <div class="col-md-2">
             <div class="form-group">
               <label for="startyear">Start</label>
-              <input type="number" name="startyear" class="form-control" placeholder="Year">
+              <input type="number" name="startyear" class="form-control" placeholder="Year"
+              formControlName="schoolFromYear">
             </div>
           </div>
           <div class="col-md-2">
             <div class="form-group">
               <label for="endyear">End</label>
-              <input type="number" name="endyear" class="form-control" placeholder="Year">
+              <input type="number" name="endyear" class="form-control" placeholder="Year"
+               formControlName="schoolToYear">
             </div>
           </div>  
         </div>
@@ -254,14 +269,16 @@
         <div class="row">
           <div class="col-md-8">
             <div class="form-group">
-              <label for="studyarea">Study Area</label>
-              <input type="text" name="studyarea" class="form-control" placeholder="Study area">
+              <label for="studyArea">Study Area</label>
+              <input type="text" name="studyArea" class="form-control" placeholder="Study area"
+               formControlName="studyArea">
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label for="degree">Degree</label>
-              <input type="text" name="degree" class="form-control" placeholder="Degree">
+              <input type="text" name="degree" class="form-control" placeholder="Degree"
+               formControlName="degree">
             </div>
           </div>
         </div>
@@ -269,11 +286,21 @@
         <div class="row">
           <div class="col-md-10">
             <div class="form-group">
-              <label for="studydesc">Study Area Description</label>
-              <textarea type="text" name="studydesc" class="form-control" rows="6"></textarea>
+              <label for="studyDesc">Study Area Description</label>
+              <textarea type="text" name="studyDesc" class="form-control" rows="6"
+               formControlName="studyDesc"></textarea>
+               <hr>
             </div>
           </div>
         </div>
+
+        </div>
+        </div>
+        </div>
+
+              <div *ngIf="cvForm.get('schoolForm').invalid && cvForm.get('schoolForm').touched" class="alert alert-danger"
+                role="alert">Please fill all fields and correct invalid data </div>
+
         <!-- languages -->
         <div class="row mt-4">
           <div class="col-md-12">
@@ -288,50 +315,63 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="language" id="lang1" value="1">
+                  <input class="form-check-input" type="radio" name="language" id="lang1" value="1"
+                   formControlName="language">
                   <label class="form-check-label" for="lang1">1</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="language" id="lang2" value="2">
+                  <input class="form-check-input" type="radio" name="language" id="lang2" value="2"
+                   formControlName="language">
                   <label class="form-check-label" for="lang2">2</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="language" id="lang3" value="3">
+                  <input class="form-check-input" type="radio" name="language" id="lang3" value="3"
+                   formControlName="language">
                   <label class="form-check-label" for="lang3">3</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="language" id="lang4" value="4">
+                  <input class="form-check-input" type="radio" name="language" id="lang4" value="4"
+                   formControlName="language">
                   <label class="form-check-label" for="lang4">4</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="language" id="lang5" value="5">
+                  <input class="form-check-input" type="radio" name="language" id="lang5" value="5"
+                   formControlName="language">
                   <label class="form-check-label" for="lang5">5</label>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+        <div *ngIf="cvForm.get('language').invalid && (cvForm.get('skills').touched || cvForm.get('skills').dirty)" class="alert alert-danger mt-2"
+          role="alert">Please choose one option</div>
         <!-- skills -->
         <div class="row mt-4">
-          <div class="col-md-12">
+          <div class="col-md-10">
             <h4>Skills</h4>
-            <hr>
           </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-success" (click)="addSkill()">Add More</button>
+          </div>
+          <hr>
         </div>
 
-        <div class="row">
+        <div class="row" formArrayName="skills">
           <div class="col-md-6">
           <div class="form-group">
             <label for="skills">Add Your Skills</label>
-            <input type="text" name="skill" id="skills" class="form-control" placeholder="Skill">
+            <div class="mt-2"  *ngFor="let school of cvForm.get('skills').controls; let i = index;">
+            <input type="text" name="skill" id="skills" class="form-control" placeholder="Skill"
+            formControlName={{i}}>
+            </div>
           </div>
           </div>
         </div>
+        <div *ngIf="cvForm.get('skills').invalid && cvForm.get('skills').touched" class="alert alert-danger" role="alert">Please add at list one skill </div>
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <button type="submit" class="btn btn-primary float-md-right">Submit</button>
+            <button type="submit" class="btn btn-primary float-md-right" [disabled]="!cvForm.valid">Submit</button>
           </div>
         </div>
 
