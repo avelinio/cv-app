@@ -1,0 +1,111 @@
+<!-- Work experience -->
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h4>Work experience</h4>
+    <hr>
+  </div>
+</div>
+<!-- Organization name working period -->
+<fieldset [formGroup]='workForm'>
+  <div formArrayName="works">
+    <div *ngFor="let work of workForm.controls.works.controls; let i=index">
+      <div class="d-flex p-3 mb-2 border border-secondary rounded justify-content-between align-items-center">
+        <h6 class="m-0">Work experience
+        <span class="badge badge-secondary">{{i + 1}}</span>
+        </h6>
+        <div class="">
+          <button type="button" class="close" *ngIf="workForm.controls.works.controls.length > 1" (click)="removeWorkForm(i)">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div [formGroupName]="i">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="organization">Organization Name</label>
+              <input formControlName="organization" type="text" name="organization" class="form-control" placeholder="Organization">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="fromyear">From</label>
+            <div class="row">
+              <div class="col-md-6">
+                <select class="form-control" name="fromMonth" formControlName="fromMonth">
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <input type="number" name="fromYear" class="form-control" placeholder="Year" formControlName="fromYear">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="fromyear">To</label>
+            <div class="row">
+              <div class="col-md-6">
+                <select class="form-control" name="toMonth" formControlName="toMonth">
+                  <option value="">Month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <input type="number" name="toYear" class="form-control" placeholder="Year" formControlName="toYear">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Job title and discription -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="jobtitle">Job Title</label>
+              <input type="text" name="jobTitle" class="form-control" placeholder="Job title" formControlName="jobTitle">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="department">Organization Department</label>
+              <input type="text" name="department" class="form-control" placeholder="Department" formControlName="department">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-10">
+            <div class="form-group">
+              <label for="jobdescription">Job Description</label>
+              <textarea type="text" name="description" class="form-control" rows="6" formControlName="description"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<div class="col-md-12 px-0">
+  <button class='btn btn-primary mr-3' type="button" (click)="addWorkForm()">Add new</button>
+</div>
