@@ -11,13 +11,20 @@
     <div class="row">
       <div class="col-md-4">
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="name" [class.invalid]="userName.invalid && (userName.dirty || userName.touched)">Name
+            <span *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="invalid">
+                is required.
+            </span></label>
           <input type="text" name="name" class="form-control" placeholder="Name" formControlName='userName'>
         </div>
+            
       </div>
       <div class="col-md-4">
         <div class="form-group">
-          <label for="midname">Middle Name</label>
+          <label for="midname" [class.invalid]="middleName.invalid && (middleName.dirty || middleName.touched)">Middle Name
+            <span *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)" class="invalid">
+                is required.
+            </span></label>
           <input type="text" name="midname" class="form-control" placeholder="Middle name" formControlName='middleName'>
         </div>
       </div>

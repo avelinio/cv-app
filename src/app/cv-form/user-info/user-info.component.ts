@@ -31,4 +31,7 @@ export class UserInfoComponent implements OnInit {
 
     this.formReady.emit(this.userForm);
   }
+
+  get userName() { return this.userForm.get('userName'); };
+  get middleName() { return this.userForm.get('middleName'); };
 }
