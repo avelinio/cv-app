@@ -1,0 +1,15 @@
+<!-- skills -->
+<div class="row mt-4 ">
+  <div class="col-md-12 ">
+    <h4>Skills</h4>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <form [formGroup]="myForm">
+    <tag-input formControlName="skill" [editable]="true" [onAdding]="onAdding" (change)="onChange($event)">
+      <tag-input-dropdown [autocompleteItems]="autocompleteItems"></tag-input-dropdown>
+    </tag-input>
+  </form>
+</div>
