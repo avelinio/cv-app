@@ -16,18 +16,7 @@ export class CvFormComponent implements OnInit {
  
 
   
-  createWorkFormItem(): FormGroup {
-    return this.fb.group({
-      'orgName': [null, Validators.required],
-      'fromYear': [null, Validators.required],
-      'fromMonth': [null, Validators.required],
-      'toMonth': [null, Validators.required],
-      'toYear': [null, Validators.required],
-      'jobTitle': [null, Validators.required],
-      'department': [null, Validators.required],
-      'jobDescription': [null, Validators.required]
-    })
-  } 
+
 
   createSchoolFormItem(): FormGroup {
     return this.fb.group({
@@ -62,7 +51,7 @@ export class CvFormComponent implements OnInit {
         'phoneNumber': [null, Validators.required],
       }),
       //  user work experience
-      'workForm': this.fb.array([this.createWorkFormItem()]),
+      // 'workForm': this.fb.array([this.createWorkFormItem()]),
       'schoolForm': this.fb.array([this.createSchoolFormItem()]),
       'language': [null, Validators.required],
       'skills':new FormArray ([
@@ -72,11 +61,7 @@ export class CvFormComponent implements OnInit {
   } 
 
   
-  addWorkplace(): void {
-    const workForm = this.cvForm.get('workForm') as FormArray;
-    workForm.push(this.createWorkFormItem());
-  }
-  
+
   addSchool(): void {
     const schoolForm = this.cvForm.get('schoolForm') as FormArray;
     schoolForm.push(this.createSchoolFormItem());

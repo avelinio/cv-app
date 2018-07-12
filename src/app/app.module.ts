@@ -13,6 +13,8 @@ import { CvListComponent } from './cv-list/cv-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppBootstrapModule } from './app-bootstrap.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CvWorkComponent } from './cv-form/cv-work/cv-work.component';
+import { CvEducationComponent } from './cv-form/cv-education/cv-education.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CvFormComponent,
     HeaderComponent,
     CvListComponent,
+    CvWorkComponent,
+    CvEducationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,101 @@
+<div class="row mt-4">
+  <div class="col-md-10">
+    <h4>Work experience</h4>
+  </div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-success" (click)="addWorkplace()">Add More</button>
+  </div>
+</div>
+<hr>
+<!-- Organization name working period -->
+<div formArrayName="workForm">
+  <div *ngFor="let workplace of cvForm.get('workForm').controls; let i = index;">
+    <div formGroupName="{{i}}">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="organization">Organization Name</label>
+            <input type="text" name="organization" class="form-control" placeholder="Organization" formControlName="orgName">
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label>From</label>
+          <div class="row">
+            <div class="col-md-6">
+              <select class="form-control" name="fromMonth" formControlName="fromMonth">
+                <option value="">Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <input type="number" name="fromYear" class="form-control" placeholder="Year" formControlName="fromYear">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label>To</label>
+          <div class="row">
+            <div class="col-md-6">
+              <select class="form-control" name="toMonth" formControlName="toMonth">
+                <option value="">Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <input type="number" name="toYear" class="form-control" placeholder="Year" formControlName="toYear">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Job title and discription -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" name="jobTitle" class="form-control" placeholder="Job title" formControlName="jobTitle">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="department">Organization Department</label>
+            <input type="text" name="department" class="form-control" placeholder="Department" formControlName="department">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10">
+          <div class="form-group">
+            <label for="jobDescription">Job Description</label>
+            <textarea type="text" name="jobDescription" class="form-control" rows="6" formControlName="jobDescription"></textarea>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="cvForm.get('workForm').invalid && cvForm.get('workForm').touched" class="alert alert-danger" role="alert">Please fill all fields and correct invalid data</div>

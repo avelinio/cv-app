@@ -1,0 +1,66 @@
+<!-- Education -->
+<div class="row mt-4">
+  <div class="col-md-10">
+    <h4>Education</h4>
+  </div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-success" (click)="addSchool()">Add More</button>
+  </div>
+</div>
+<hr>
+
+<div formArrayName="schoolForm">
+  <div *ngFor="let school of cvForm.get('schoolForm').controls; let i = index;">
+    <div formGroupName="{{i}}">
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="school">School</label>
+            <input type="text" name="school" class="form-control" placeholder="School" formControlName="school">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="startyear">Start</label>
+            <input type="number" name="startyear" class="form-control" placeholder="Year" formControlName="schoolFromYear">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="endyear">End</label>
+            <input type="number" name="endyear" class="form-control" placeholder="Year" formControlName="schoolToYear">
+          </div>
+        </div>
+      </div>
+      <!-- Study area and discription -->
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="studyArea">Study Area</label>
+            <input type="text" name="studyArea" class="form-control" placeholder="Study area" formControlName="studyArea">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="degree">Degree</label>
+            <input type="text" name="degree" class="form-control" placeholder="Degree" formControlName="degree">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10">
+          <div class="form-group">
+            <label for="studyDesc">Study Area Description</label>
+            <textarea type="text" name="studyDesc" class="form-control" rows="6" formControlName="studyDesc"></textarea>
+            <hr>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="cvForm.get('schoolForm').invalid && cvForm.get('schoolForm').touched" class="alert alert-danger" role="alert">Please fill all fields and correct invalid data </div>
