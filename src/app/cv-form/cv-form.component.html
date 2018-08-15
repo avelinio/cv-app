@@ -1,10 +1,11 @@
 <div class="container">
-  <form [formGroup]='cvForm'>
+  <form [formGroup]='cvForm' (ngSubmit)="onSubmit()">
     <app-user-info (formReady)="formInitialized('userInfo', $event)"></app-user-info>
     <app-work-info (formReady)="formInitialized('workExperiences', $event)"></app-work-info>
     <app-education-info (formReady)=" formInitialized('educations', $event) "></app-education-info>
     <app-languages (formReady)=" formInitialized('languages', $event) "></app-languages>
     <app-skills (formReady)=" formInitialized('skills', $event) "></app-skills>
+    <button class="btn btn-default" type="submit">submit</button>
   </form>
 </div>
 
