@@ -23,7 +23,11 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="organization">Organization Name</label>
+              <label for="organization" [class.invalid]="work.controls.organization.invalid && (work.controls.organization.dirty || work.controls.organization.touched)">Organization
+              <span *ngIf="work.controls.organization.invalid && (work.controls.organization.dirty || work.controls.organization.touched)" class="invalid">
+                is required.
+              </span>
+              </label>
               <input formControlName="organization" type="text" name="organization" class="form-control" placeholder="Organization">
             </div>
           </div>
@@ -81,13 +85,21 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="jobtitle">Job Title</label>
+              <label for="jobtitle" [class.invalid]="work.controls.jobTitle.invalid && (work.controls.jobTitle.dirty || work.controls.jobTitle.touched)">Job Title
+              <span *ngIf="work.controls.jobTitle.invalid && (work.controls.jobTitle.dirty || work.controls.jobTitle.touched)" class="invalid">
+                is required.
+              </span>
+              </label>
               <input type="text" name="jobTitle" class="form-control" placeholder="Job title" formControlName="jobTitle">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="department">Organization Department</label>
+              <label for="department" [class.invalid]="work.controls.department.invalid && (work.controls.department.dirty || work.controls.department.touched)">Organization Department
+                <span *ngIf="work.controls.department.invalid && (work.controls.department.dirty || work.controls.department.touched)" class="invalid">
+                  is required.
+                </span>
+              </label>
               <input type="text" name="department" class="form-control" placeholder="Department" formControlName="department">
             </div>
           </div>
@@ -96,7 +108,11 @@
         <div class="row">
           <div class="col-md-10">
             <div class="form-group">
-              <label for="jobdescription">Job Description</label>
+              <label for="jobdescription" [class.invalid]="work.controls.description.invalid && (work.controls.description.dirty || work.controls.description.touched)">Job Description
+              <span *ngIf="work.controls.description.invalid && (work.controls.description.dirty || work.controls.description.touched)" class="invalid">
+                is required.
+              </span>
+              </label>
               <textarea type="text" name="description" class="form-control" rows="6" formControlName="description"></textarea>
             </div>
           </div>

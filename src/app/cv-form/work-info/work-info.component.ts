@@ -44,8 +44,8 @@ export class WorkInfoComponent implements OnInit {
   addWorkForm() {
     // add new work form to the list
     const control = <FormArray>this.workForm.controls['works'];
-    const addrCtrl = this.initForm();
-    control.push(addrCtrl);
+    const addCtrl = this.initForm();
+    control.push(addCtrl);
   }
 
   removeWorkForm(i: number) {
@@ -53,4 +53,15 @@ export class WorkInfoComponent implements OnInit {
     const control = <FormArray>this.workForm.controls['works'];
     control.removeAt(i);
   }
+
+  // get organization() { return this.workForm.get('organization'); };
+  // get fromMonth() { return this.workForm.get('fromMonth'); };
+  // get fromYear() { return this.workForm.get('fromYear'); };
+  // get toMonth() { return this.workForm.get('toMonth'); };
+  // get toYear() { return this.workForm.get('toYear'); };
+  // get jobTitle() { return this.workForm.get('jobTitle'); };
+  // get department() { return this.workForm.get('department'); };
+  // get description() { return this.workForm.get('description'); };
+  
 }
+
