@@ -23,19 +23,34 @@
         <div class="row">
           <div class="col-md-8">
             <div class="form-group">
-              <label for="school">School</label>
+              <label for="school" [class.invalid]="education.controls.school.invalid && (education.controls.school.dirty || education.controls.school.touched)">School
+                <span *ngIf="education.controls.school.invalid && (education.controls.school.dirty || education.controls.school.touched)"
+                  class="invalid">
+                  is required.
+                </span>
+              </label>
               <input type="text" name="school" class="form-control" placeholder="School" formControlName="school">
             </div>
           </div>
           <div class="col-md-2">
             <div class="form-group">
-              <label for="startYear">Start</label>
+              <label for="startYear" [class.invalid]="education.controls.startYear.invalid && (education.controls.startYear.dirty || education.controls.startYear.touched)">Start
+                <span *ngIf="education.controls.startYear.invalid && (education.controls.startYear.dirty || education.controls.startYear.touched)"
+                  class="invalid">
+                  is required.
+                </span>
+              </label>
               <input type="number" name="startYear" class="form-control" placeholder="Start Year" formControlName="startYear">
             </div>
           </div>
           <div class="col-md-2">
             <div class="form-group">
-              <label for="endYear">End</label>
+              <label for="endYear" [class.invalid]="education.controls.endYear.invalid && (education.controls.endYear.dirty || education.controls.endYear.touched)">End
+                <span *ngIf="education.controls.endYear.invalid && (education.controls.endYear.dirty || education.controls.endYear.touched)"
+                  class="invalid">
+                  is required.
+                </span>
+              </label>
               <input type="number" name="endYear" class="form-control" placeholder="End Year" formControlName="endYear">
             </div>
           </div>
@@ -44,13 +59,23 @@
         <div class="row">
           <div class="col-md-8">
             <div class="form-group">
-              <label for="studyArea">Study Area</label>
+              <label for="studyArea" [class.invalid]="education.controls.studyArea.invalid && (education.controls.studyArea.dirty || education.controls.studyArea.touched)">Study Area
+                <span *ngIf="education.controls.studyArea.invalid && (education.controls.studyArea.dirty || education.controls.studyArea.touched)"
+                  class="invalid">
+                  is required.
+                </span>
+              </label>
               <input type="text" name="studyArea" class="form-control" placeholder="Study area" formControlName="studyArea">
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label for="degree">Degree</label>
+              <label for="degree" [class.invalid]="education.controls.degree.invalid && (education.controls.degree.dirty || education.controls.degree.touched)">Degree
+                <span *ngIf="education.controls.degree.invalid && (education.controls.degree.dirty || education.controls.degree.touched)"
+                  class="invalid">
+                  is required.
+                </span>
+              </label>
               <input type="text" name="degree" class="form-control" placeholder="Degree" formControlName="degree">
             </div>
           </div>
@@ -59,7 +84,12 @@
         <div class="row">
           <div class="col-md-10">
             <div class="form-group">
-              <label for="description">Study Area Description</label>
+              <label for="description" [class.invalid]="education.controls.description.invalid && (education.controls.description.dirty || education.controls.description.touched)">Study Area Description
+                <span *ngIf="education.controls.description.invalid && (education.controls.description.dirty || education.controls.description.touched)"
+                  class="invalid">
+                  is required.
+                </span>
+              </label>
               <textarea type="text" name="description" class="form-control" rows="6" formControlName="description"></textarea>
             </div>
           </div>
