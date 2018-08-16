@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
 import { CvFormComponent } from './cv-form/cv-form.component';
@@ -20,7 +21,11 @@ import { LanguagesComponent } from './cv-form/languages/languages.component';
 import { SkillsComponent } from './cv-form/skills/skills.component';
 
 import { TagInputModule } from 'ngx-chips';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EducationInfoComponent,
     UserInfoComponent,
     LanguagesComponent,
-    SkillsComponent
+    SkillsComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TagInputModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
