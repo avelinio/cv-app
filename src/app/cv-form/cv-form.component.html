@@ -5,7 +5,7 @@
     <app-education-info (formReady)=" formInitialized('educations', $event) "></app-education-info>
     <app-languages (formReady)=" formInitialized('languages', $event) "></app-languages>
     <app-skills (formReady)=" formInitialized('skills', $event) "></app-skills>
-    <button class="btn btn-default" type="submit">submit</button>
+    <button class="btn btn-default" type="submit" [disabled]="!cvForm.valid">submit</button>
   </form>
 </div>
 
