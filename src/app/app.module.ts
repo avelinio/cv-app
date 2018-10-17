@@ -13,7 +13,6 @@ import { CvFormComponent } from './cv-form/cv-form.component';
 import { HeaderComponent } from './header/header.component';
 import { CvListComponent } from './cv-list/cv-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppBootstrapModule } from './app-bootstrap.module';
 import { WorkInfoComponent } from './cv-form/work-info/work-info.component';
 import { EducationInfoComponent } from './cv-form/education-info/education-info.component';
 import { UserInfoComponent } from './cv-form/user-info/user-info.component';
@@ -21,11 +20,16 @@ import { LanguagesComponent } from './cv-form/languages/languages.component';
 import { SkillsComponent } from './cv-form/skills/skills.component';
 
 import { TagInputModule } from 'ngx-chips';
+
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -46,11 +50,11 @@ import { AuthGuard } from './auth/auth-guard.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
-    AppBootstrapModule,
     FormsModule,
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
     TagInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

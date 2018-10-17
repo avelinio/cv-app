@@ -12,7 +12,7 @@
       <div class="row" [formGroupName]="i">
         <div class="col-md-12">
           <div class="input-group">
-            <input type="text" class="form-control" formControlName='language' placeholder="Language">
+            <input type="text" class="form-control" formControlName='language' placeholder="Language" required>
             <div class="input-group-append" *ngIf="languageForm.controls.languages.controls.length > 1">
               <button type="button" class="input-group-text" (click)="removeLanguageForm(i)">
                 <span aria-hidden="true">&times;</span>
